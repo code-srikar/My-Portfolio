@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <title>My Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #000021;
@@ -13,19 +13,21 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0.82% 11%;
+            padding: 1% 5%;
             height: 75px;
             background-color: #06063F;
         }
 
-        nav .left {
-            font-size: 1.875rem;
+        nav .logo {
+            font-size: 2rem;
+            font-weight: 600;
         }
 
         nav ul {
@@ -43,11 +45,13 @@
         nav ul li a {
             color: white;
             text-decoration: none;
-            transition: font-size 0.3s;
+            font-size: 1rem;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            font-size: 1.05rem;
+            color: #ffcc00;
+            /* Adjust to match the color on the homepage hover */
         }
 
         nav ul li ul {
@@ -87,26 +91,46 @@
             color: chocolate;
         }
 
-
         .super {
             display: flex;
-            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
             padding: 40px;
+            gap: 20px;
         }
 
-        .first,
-        .second,
-        .three {
-            margin: 10px;
-            padding: 10px;
-            width: 650px;
-            height: 70%;
-            background-color: transparent !important;
-            box-shadow: 0 4px 5px 3px rgba(119, 53, 136, .459) !important;
-            color: #fff !important;
-            height: 100% !important;
-            opacity: .9 !important;
-            transition: all .5s ease 0s !important;
+        .project-card {
+            background-color: rgba(119, 53, 136, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .project-card p {
+            padding: 15px;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .project-card .description {
+            padding: 10px 15px 20px 15px;
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -158,53 +182,37 @@
             </ul>
         </div>
     </nav>
-    <div class="super">
-        <div class="first">
-            <div>
-                <img src="photo.png" alt="port.png" height="200px" width="350px">
-                <p>My Portfolio</p><br>Crafted with HTML,CSS and JS, invites you into a visually captivating world
-                inspired by gaming aesthetics. Navigate seamlessly through sections like Home, About, Skills, Projects,
-                and
-                Contact, enhanced with smooth scroll animations and interactive elements. The portfolio showcases my
-                proficiency in various technologies through visually appealing displays of skills. Connect with me
-                effortlessly via a user-friendly contact form. This portfolio not only demonstrates my technical
-                expertise
-                but also aims to provide visitors with an engaging and memorable experience.
-            </div>
-        </div>
-        <div class="second">
-            <div>
-                <img src="tictactoe.png" alt="" height="200px" width="350px">
-                <p>TIC-TAC-TOE</p><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita dicta soluta quidem perspiciatis
-                nulla
-                exercitationem magnam! Nisi neque commodi in ad non officia, maiores laboriosam repellat eveniet
-                distinctio,
-                nesciunt culpa reprehenderit ipsam illum, magnam dolor iure cum nobis officiis odio numquam quam
-                perspiciatis
-                cumque consectetur! Possimus consectetur tempora esse ipsum eum, vel asperiores! Architecto alias
-                tempora
-                illo
-                porro suscipit eveniet!
-                imoimcopmlw;l,Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, eos?Lorem ipsum, dolor
 
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <div class="super">
+        <div class="project-card">
+            <img src="photo.png" alt="Portfolio Project">
+            <p>My Portfolio</p>
+            <div class="description">
+                Crafted with HTML, CSS, and JS, this portfolio showcases my technical expertise through a visually
+                captivating interface inspired by gaming aesthetics. Navigate seamlessly through sections like Home,
+                About, Skills, Projects, and Contact.
             </div>
         </div>
-        <div class="three">
-            <div>
-                <img src="bank.png" alt="" height="200px" width="350px">
-                <p>BANK PROJECT</p>
-                <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur provident praesentium eius
-                ducimus
-                tenetur, cum hic est vitae asperiores blanditiis ad deserunt exercitationem, libero incidunt molestiae
-                debitis?
-                Accusamus suscipit voluptatibus laboriosam quos nulla, quidem a consectetur deserunt nihil reiciendis
-                delectus
-                expedita praesentium dignissimos tenetur asperiores sed sint quo blanditiis minima, quam aut ab quasi
-                beatae?
-                Tenetur excepturi blanditiis explicabo qui?
-                ijnoivmoc
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, ea. Earum eos ipsum ip
+
+        <div class="project-card">
+            <img src="tictactoe.png" alt="Tic-Tac-Toe Game">
+            <p>TIC-TAC-TOE</p>
+            <div class="description">
+                A classic Tic-Tac-Toe game implemented with a sleek design. Challenge your friends and see who can claim
+                victory. Experience smooth animations and responsive gameplay.
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="bank.png" alt="Bank Project">
+            <p>Bank Project</p>
+            <div class="description">
+                A comprehensive bank management system designed to handle various financial transactions and customer
+                accounts efficiently. Features include account management, transaction tracking, and secure access.
             </div>
         </div>
     </div>

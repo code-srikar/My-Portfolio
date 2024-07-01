@@ -1,22 +1,41 @@
-<style>body {
-    background-color: #000021;
-    color: white;
+:root {
+    --main-bg-color: #121212;
+    --secondary-bg-color: #1f1f1f;
+    --highlight-color: #e0aaff;
+    --text-color: #ffffff;
+    --hover-color: #b280d8;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    height: 75px;
-    background-color: #06063F;
+    padding: 1rem 5%;
+    background-color: var(--secondary-bg-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav:hover {
+    background-color: var(--highlight-color);
 }
 
 nav .left {
-    font-size: 1.875rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--highlight-color);
 }
 
 nav ul {
@@ -27,102 +46,114 @@ nav ul {
 }
 
 nav ul li {
-    position: relative;
     margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    transition: font-size 0.3s;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    font-size: 1.05rem;
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #06063F;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    z-index: 1;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-
-nav ul li ul li {
-    width: 200px;
-}
-
-nav ul li ul li a {
-    display: block;
-    padding: 10px;
+    color: var(--highlight-color);
 }
 
 header {
-    padding: 10px 10%;
+    padding: 3rem 10%;
     text-align: center;
-    background-color: #06063F;
+    background-color: var(--secondary-bg-color);
+    animation: fadeIn 2s ease-in-out;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    color: chocolate;
+    font-size: 3rem;
+    color: var(--highlight-color);
 }
 
-.ski {
+section {
+    padding: 2rem 10%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    background-color: var(--highlight-color);
+    color: var(--main-bg-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-content {
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-}
-
-.one {
-    width: 200px;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    vertical-align: middle;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.profile-pic {
+    width: 150px;
     height: 150px;
-    border: 1.7px solid rgba(200, 137, 230, .637) !important;
-    border-radius: 5px !important;
-    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, .137) !important;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
 }
 
-.two {
-    width: 200px;
-    text-align: center;
-    vertical-align: middle;
-    height: 150px;
-    border: 1.7px solid rgba(200, 137, 230, .637) !important;
-    border-radius: 5px !important;
-    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, .137) !important;
+.profile-pic:hover {
+    transform: scale(1.1);
 }
 
-.three,
-.four,
-.five,
-.six,
-.seven,
-.eight,
-.nine,
-.ten {
-    width: 200px;
-    text-align: center;
-    vertical-align: middle;
-    height: 150px;
-    border: 1.7px solid rgba(200, 137, 230, .637) !important;
-    border-radius: 5px !important;
-    box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, .137) !important;
+.bio {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
-
-.ski {
-    display: flexbox;
-}
-
-</style>
